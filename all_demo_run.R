@@ -166,31 +166,7 @@ for (expose in exposes){
   
   setwd(paste0(filess,"/data_all"))
   write.csv(data_all,paste(No.sample,expose,"all.csv",sep = "_"),row.names = FALSE)
-  
-  
-  
-  data_all = subset(data_all,DIS <=0.5)
-  data_all = setDF(data_all)
-  
-  
-  data_p = data.frame()
-  
-  for (ii in 4:7){
-    aa = data.frame(label = data_all[,3],value = data_all[,ii],stringsAsFactors = FALSE)
-    data_p = rbind(data_p,aa)
-  }
-  
-  
-  data_p = data_p[!is.na(data_p$value),]
-  f1n <- fitdistr(data_p$value,"normal")
-  
-  
-  
-  data_all$p = pnorm(data_all$max_2, mean = f1n$estimate[1], sd = f1n$estimate[2] , lower.tail = FALSE, log.p = FALSE)
-  
-  
-  write.csv(data_all,paste(No.sample,expose,"cal_p.csv",sep = "_"),row.names = FALSE)
-  
+    
   
 }
 
@@ -474,18 +450,5 @@ for (ii in locations){
 
 
 write.csv(seq_result,"seq.csv",row.names = FALSE)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
