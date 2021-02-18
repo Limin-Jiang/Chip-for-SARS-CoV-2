@@ -7,9 +7,7 @@ library(MASS)
 
 
 option_list = list(
-  make_option(c("-n", "--no.sample"), type="double", default=NULL, help="sample's no", metavar="character"),
-  make_option(c("-w", "--second.allele"), type="character", default=NULL, help="whether to select the second allele, Y or N", metavar="character"),
-  make_option(c("-m", "--methods"), type="character", default=NULL, help="v-voting, m-max, k-Kendall", metavar="character")
+  make_option(c("-n", "--no.sample"), type="double", default=NULL, help="sample's no", metavar="character") 
 ) 
 
 opt_parser = OptionParser(option_list=option_list)
@@ -18,8 +16,7 @@ opt = parse_args(opt_parser)
 
 ## parameters
 sample.no = opt$no.sample  #
-second.allele = opt$second.allele  #
-method.lag = opt$methods  #
+
 
 
 
